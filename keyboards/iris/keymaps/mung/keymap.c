@@ -21,6 +21,7 @@ enum custom_keycodes {
 
 #define KC_LOWR LOWER
 #define KC_RASE RAISE
+#define KC_ADJ TG(_ADJUST)
 #define KC_RST RESET
 #define KC_BL_S BL_STEP
 #define KC_BL_T BL_TOGG
@@ -31,8 +32,8 @@ enum custom_keycodes {
 #define KC_WTAB GUI_T(KC_TAB)
 #define KC_SFBS SFT_T(KC_BSPC)
 #define KC_LENT LT(_LOWER, KC_ENT)
-#define KC_CTLP CTL_T(LSFT(KC_9))
-#define KC_CTRP CTL_T(LSFT(KC_0))
+#define KC_CTPU CTL_T(KC_PGUP)
+#define KC_CTPD CTL_T(KC_PGDN)
 #define KC_RABR LT(_RAISE, KC_LBRC)
 #define KC_ALBR ALT_T(KC_RBRC)
 
@@ -42,11 +43,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
      TILD, 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,MINS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     TAB , Q  , W  , E  , R  , T  ,                Y  , U  , I  , O  , P  ,BSLS,
+     HOME, Q  , W  , E  , R  , T  ,                Y  , U  , I  , O  , P  , END,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      ESC,  A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LCTL, Z  , X  , C  , V  , B  ,SPC ,     SFBS, N  , M  ,COMM,DOT ,SLSH,RCTL,
+     CTPU, Z  , X  , C  , V  , B  ,SPC ,     SFBS, N  , M  ,COMM,DOT ,SLSH,CTPD,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                        RABR, WTAB, SPC,       SFBS, LENT, ALBR
   //                  `----+----+----'        `----+----+----'
@@ -58,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      RST , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     DEL ,    ,LEFT,RGHT, UP ,LBRC,               RBRC, P4 , P5 , P6 ,PLUS,PIPE,
+     DEL , ADJ,LEFT,RGHT, UP ,LBRC,               RBRC, P4 , P5 , P6 ,PLUS,PIPE,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
      BL_S,    ,    ,    ,DOWN,LCBR,TRNS,     TRNS,RCBR, P1 , P2 , P3 ,MINS,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'

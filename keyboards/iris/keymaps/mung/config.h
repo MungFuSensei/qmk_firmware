@@ -31,12 +31,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
+#define RGBW
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 12
 #define RGBLIGHT_HUE_STEP 8
 #define RGBLIGHT_SAT_STEP 8
 #define RGBLIGHT_VAL_STEP 8
-//#define BACKLIGHT_BREATHING 
+#define RGBLIGHT_LIMIT_VAL 255
+//#define BACKLIGHT_BREATHING
 
 #endif
+
+// Current limiting.
+//#define USB_MAX_POWER_CONSUMPTION 900     // Limit device max power consumption.
+//#define RGBSTRIP_CURRENT_LIMIT 400        // Strip current limit in mA.
+//#define RGBSTRIP_MAX_CURRENT_PER_LIGHT 60 // mA per light when at max brightness.
